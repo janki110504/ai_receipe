@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.static(__dirname));
 
 const client = new OpenAI({
-  apiKey: process.env.GROQ_API_KEY,
+  apiKey: process.env.GROQ_API_KEY || process.env.OPENAI_API_KEY,
   baseURL: "https://api.groq.com/openai/v1"
 });
 
